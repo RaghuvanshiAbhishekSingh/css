@@ -3,11 +3,12 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: inherit; /*inherited from body*/
 }
 
 html {
-    // This defines what 1rem is
+    // This defines what 1rem is 10/16 as we took 10px as default font size for the page, in % as user can zoom in page rem not supported in IE9
+
     font-size: 62.5%;
 }
 

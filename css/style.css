@@ -1,164 +1,174 @@
-/*
-COLORS:
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #777;
-  padding: 30px;
-}
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      45deg,
-      hsla(347, 99%, 71%, 0.8),
-      rgba(255, 143, 83, 0.8)
-    ),
-    url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  position: relative; /*this is as per screen linear-gradient(45deg, hsla(347, 99%, 71%, 0.5) , rgba(255, 143, 83, 0.7))*/
-}
-.logo-box {
-  position: absolute; /*as per the parent taht includes it*/
-  top: 40px;
-  left: 40px;
-}
-.logo {
-  height: 35px;
-}
-.text-box {
-  position: absolute;
-  top: 40%; /*in relation to parent*/
-  left: 50%;
-  transform: translate(-50%, -50%); /*in relative to the parent itself*/
-  text-align: center;/*for inline block element*/
-}
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden; /*fix shaking effect*/
-}
-.heading-primary-main {
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
-  animation-name: moveInLeft;
-  animation-duration: 3s;
-  animation-delay: 2s; /*wait for this much time*/
-  animation-timing-function: ease-in;
-  margin-block-end: 30px;
-}
-/*
-  animation-iteration-count: 3;
-
-*/
-.heading-primary-sub {
-  display: block;
-  font-size: 30x;
-  font-weight: 700;
-  letter-spacing: 10px;
-  animation-name: moveInRight;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-timing-function: ease-in; /*animation: name time duration*/
-}
-.btn:link,
-.btn:visited
-{
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block; /*treated like text*/
-    border-radius: 100px;
-    transition: all .2s; /*transition on initial state*/
-    position: relative;
-}
-.btn-animation {
-    animation: moveUp 2s ease-out;
-    animation-delay: 2s;
-    animation-fill-mode: backwards; /*difn=ine the initial state*/
-}
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2); /*offset in x, offset in y , blur, color*/
-}
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
-}
-.btn-white{
-    color: #777;
-    background-color:#fff;
-}
-.btn::after {
-    content: '';
-    display: inline-block;
-    height: 100%; /*100% of parent*/
-    width: 100%;
-    border-radius: 100px;
-    position: absolute; /*.btn:visited parent*/
-    top:0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-.btn-white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.5),  scaleY(1.5);
-    opacity: 0;
-}
 /*ANIMATION*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
-  }
+    transform: translateX(-100px); }
   80% {
-    transform: translateX(20px);
-  }
+    transform: translateX(20px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
-  }
+    transform: translateX(100px); }
   80% {
-    transform: translateX(-20px);
-  }
+    transform: translateX(-20px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
+
 @keyframes moveUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-  
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*fix shaking effect*/
+  padding-bottom: 3rem;
+  /*
+        animation-iteration-count: 3;
+      */ }
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    /*wait for this much time*/
+    animation-timing-function: ease-in;
+    margin-block-end: 30px; }
+  .heading-primary-sub {
+    display: block;
+    font-size: 30x;
+    font-weight: 700;
+    letter-spacing: 10px;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+    /*animation: name time duration*/ }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 2rem 7rem;
+  display: inline-block;
+  /*treated like text*/
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /*transition on initial state*/
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn-animation {
+  animation: moveUp 2s ease-out;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  /*difn=ine the initial state*/ }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /*offset in x, offset in y , blur, color*/ }
+  .btn:hover::after {
+    transform: scaleX(1.5);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn-white {
+  color: #777;
+  background-color: #fff; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  /*100% of parent*/
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  /*btn:visited parent*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; }
+
+.btn-white::after {
+  background-color: #fff; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(45deg, rgba(254, 108, 140, 0.8), rgba(255, 143, 83, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  position: relative;
+  /*this is as per screen linear-gradient(45deg, hsla(347, 99%, 71%, 0.5) , rgba(255, 143, 83, 0.7))*/ }
+  .header__logo-box {
+    position: absolute;
+    /*as per the parent taht includes it*/
+    top: 40px;
+    left: 40px; }
+    .header__logo-box-logo {
+      height: 35px; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /*in relation to parent*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*in relative to the parent itself*/
+    text-align: center;
+    /*for inline block element*/ }
