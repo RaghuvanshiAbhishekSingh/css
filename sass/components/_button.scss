@@ -18,7 +18,7 @@
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 1.rem 2.rem rgba(0, 0, 0, 0.2); /*offset in x, offset in y , blur, color*/
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*offset in x, offset in y , blur, color*/
       &::after {
         transform: scaleX(1.5);
         opacity: 0;
