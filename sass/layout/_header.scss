@@ -8,16 +8,27 @@
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
   position: relative; /*this is as per screen linear-gradient(45deg, hsla(347, 99%, 71%, 0.5) , rgba(255, 143, 83, 0.7))*/
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 88%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 88%);
+  }
 
   &__logo-box {
     position: absolute; /*as per the parent taht includes it*/
-    top: 4rem;
-    left: 4rem;
-
-    &-logo {
-      height: 3.5rem;
+    top: -7rem;
+    left: -18rem;
+    @include respond(phone) {
+      top: 0;
+      left: 0;
+    }
+    @include respond(phone) {
+      &-logo {
+        height: 15.5rem;
+      }
     }
   }
 

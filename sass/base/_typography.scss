@@ -4,7 +4,6 @@ body {
   /*font-size: 16px; we have set this in base*/
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -22,10 +21,15 @@ body {
     animation-delay: 2s; /*wait for this much time*/
     animation-timing-function: ease-in;
     margin-block-end: 3rem;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
   /*
-        animation-iteration-count: 3;
-      */
+    animation-iteration-count: 3;
+  */
   &-sub {
     display: block;
     font-size: 30x;
@@ -35,9 +39,49 @@ body {
     animation-duration: 3s;
     animation-delay: 2s;
     animation-timing-function: ease-in; /*animation: name time duration*/
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
+  }
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-image: linear-gradient($color-primary-pink, $color-primary-orange);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.8rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black,.2);
   }
 }
 
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.paragraph {
+  font-size: $default-font-size;
+  &:not(:last-chile){
+    padding-bottom: 3rem;
+  }
+}
 // .heading-secondary {
 //     font-size: 3.5rem;
 //     text-transform: uppercase;

@@ -1,17 +1,37 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit; /*inherited from body*/
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /*inherited from body*/
 }
 
 html {
-    // This defines what 1rem is 10/16 as we took 10px as default font size for the page, in % as user can zoom in page rem not supported in IE9
+  // This defines what 1rem is 10/16 as we took 10px as default font size for the page, in % as user can zoom in page rem not supported in IE9
 
-    font-size: 62.5%;
+  font-size: 62.5%;
+
+  // @include respond-phone {
+  //     font-size: 50%;
+  // }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px 9/16
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px 8/16
+  }
+
+  @include respond(bigdesktop) {
+    font-size: 75%; //1rem = 12px 16/16
+  }
 }
 
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

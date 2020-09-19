@@ -1,0 +1,220 @@
+.card {
+  perspective: 150rem; // prospective is always on parent
+  -moz-perspective: 150rem;
+  height: 50rem;
+
+  position: relative;
+  &__side {
+    background-color: orangered;
+    height: 50rem;
+    transition: all 2s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    overflow: hidden;
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      background-color: greenyellow;
+      transform: rotateY(-180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-backgroundclip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-pink,
+          $color-tertiary-light-blue
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-pink,
+          $color-tertiary-light-blue
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-pink,
+          $color-tertiary-light-blue
+        ),
+        url(../img/nat-5.jpg);
+    }
+  }
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: right;
+    top: 16rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+  }
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        line-height: 3.5rem;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+        &:not(:last-child) {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+  &__contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+
+    &-datails {
+      margin-bottom: 8rem;
+      color: $color-white;
+    }
+    &-name {
+      font-variant: small-caps;
+      font-size: 5rem;
+      font-weight: 100;
+
+      // &::before {
+      //   content: "\201C";
+      //   font-size: 6rem;
+      //   font-weight: 400;
+      // }
+      // &::after {
+      //   content: "\201D";
+      //   font-size: 6rem;
+      //   font-weight: 400;
+      // }
+      &::first-letter {
+        font-size: 7rem;
+        font-weight: 300;
+      }
+    }
+    &-number {
+      font-size: 1.4rem;
+    }
+    &-email {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    position: relative;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      box-shadow:none;
+      position: relative;
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__heading {
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: #fff;
+      text-transform: uppercase;
+      position: absolute;
+      text-align: right;
+      top: 16rem;
+      right: 2rem;
+      width: 75%;
+    }
+
+    &__heading-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
+        );
+      }
+    }
+    &__details {
+      padding: 3rem;
+      ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+        li {
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 1rem;
+          line-height: 3.5rem;
+          letter-spacing: 2px;
+          word-spacing: 3px;
+          &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+          }
+        }
+      }
+    }
+  }
+}
